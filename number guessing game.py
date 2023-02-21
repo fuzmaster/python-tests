@@ -1,0 +1,27 @@
+import random
+
+def play_game():
+    # Generate a random number between 1 and 100
+    secret_number = random.randint(1, 100)
+
+    # Prompt the player to guess the number
+    guess = int(input("Guess a number between 1 and 100: "))
+    tries = 1
+
+    # Keep looping until the player guesses the number
+    while guess != secret_number:
+        if guess < secret_number:
+            print("Too low! Try again.")
+        else:
+            print("Too high! Try again.")
+
+        # Get the player's next guess
+        guess = int(input("Your guess: "))
+        tries += 1
+
+    # The player has won!
+    print(f"You won! It took you {tries} tries to guess the number {secret_number}.")
+
+if __name__ == '__main__':
+    play_game()
+
