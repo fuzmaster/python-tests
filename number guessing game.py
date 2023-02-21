@@ -24,6 +24,13 @@ def play_game():
 
     # The player has won!
     print(f"Congratulations, {player_name}! You won! It took you {tries} tries to guess the number {secret_number}.")
+    
+    # Prompt the player to play again
+    play_again = input("Do you want to play again? (y/n): ")
+    if play_again == "y":
+        play_game()
+    else:
+        print("Thanks for playing!")
 
 if __name__ == '__main__':
     play_game()
