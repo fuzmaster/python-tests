@@ -1,11 +1,14 @@
 import random
 
 def play_game():
-    # Generate a random number between 1 and 100
-    secret_number = random.randint(1, 100)
+    # Prompt the player to enter their name
+    player_name = input("Enter your name: ")
+
+    # Generate a random number between 1 and 10
+    secret_number = random.randint(1, 10)
 
     # Prompt the player to guess the number
-    guess = int(input("Guess a number between 1 and 100: "))
+    guess = int(input("Guess a number between 1 and 10: "))
     tries = 1
 
     # Keep looping until the player guesses the number
@@ -20,8 +23,7 @@ def play_game():
         tries += 1
 
     # The player has won!
-    print(f"You won! It took you {tries} tries to guess the number {secret_number}.")
+    print(f"Congratulations, {player_name}! You won! It took you {tries} tries to guess the number {secret_number}.")
 
 if __name__ == '__main__':
     play_game()
-
