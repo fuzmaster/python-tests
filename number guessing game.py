@@ -1,9 +1,11 @@
 import random
 
-def play_game():
-    # Prompt the two players to enter their names
-    player1_name = input("Enter Player 1 name: ")
-    player2_name = input("Enter Player 2 name: ")
+def play_game(player1_name=None, player2_name=None):
+    # Prompt the players to enter their names, if not already provided
+    if not player1_name:
+        player1_name = input("Enter Player 1 name: ")
+    if not player2_name:
+        player2_name = input("Enter Player 2 name: ")
 
     # Generate a random number between 1 and 10
     secret_number = random.randint(1, 10)
@@ -39,7 +41,7 @@ def play_game():
     # Prompt the players to play again
     play_again = input("Do you want to play again? (y/n): ")
     if play_again == "y":
-        play_game()
+        play_game(player1_name, player2_name)
     else:
         print("Thanks for playing!")
         
